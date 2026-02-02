@@ -1,0 +1,17 @@
+.industry-title {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--text-xl);
+}
+
+.industry-list {
+    color: var(--color-text-muted);
+}
+
+.industry-list li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.industries-hero {
+    text-align: center;
+}

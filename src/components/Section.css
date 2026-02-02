@@ -1,0 +1,47 @@
+.section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.section-bg-white {
+    background-color: var(--color-bg-body);
+}
+
+.section-bg-light {
+    background-color: var(--color-bg-alt);
+}
+
+.section-bg-dark {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.section-bg-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.section-header {
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+}
+
+.section-title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+}
+
+.section-bg-dark .section-subtitle,
+.section-bg-primary .section-subtitle {
+    color: #94A3B8;
+}
+
+.section-bg-dark .section-title,
+.section-bg-primary .section-title {
+    color: white;
+}

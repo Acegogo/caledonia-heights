@@ -1,0 +1,22 @@
+.solutions-hero {
+    text-align: center;
+}
+
+.solutions-hero .page-title,
+.solutions-hero .page-subtitle {
+    color: white;
+}
+
+.solutions-hero .page-subtitle {
+    color: #CBD5E1;
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-card p {
+    color: var(--color-text-muted);
+}
