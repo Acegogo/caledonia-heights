@@ -2,6 +2,20 @@
     text-align: center;
 }
 
+.why-us-hero .page-title {
+    color: white;
+    font-size: var(--text-4xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.why-us-hero .page-subtitle {
+    color: #CBD5E1;
+    /* Slate 300 */
+    font-size: var(--text-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .reason-block {
     padding: var(--spacing-lg);
     border-left: 4px solid var(--color-primary);

@@ -15,3 +15,17 @@
 .industries-hero {
     text-align: center;
 }
+
+.industries-hero .page-title {
+    color: white;
+    font-size: var(--text-4xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.industries-hero .page-subtitle {
+    color: #CBD5E1;
+    /* Slate 300 */
+    font-size: var(--text-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
