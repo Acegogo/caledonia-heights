@@ -1,5 +1,20 @@
 .platforms-hero {
     text-align: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 100%);
+    color: white;
+}
+
+.platforms-hero .page-title {
+    color: white;
+    font-size: var(--text-4xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.platforms-hero .page-subtitle {
+    color: #CBD5E1;
+    font-size: var(--text-xl);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .platform-block {

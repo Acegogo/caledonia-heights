@@ -64,7 +64,7 @@ const Solutions = () => {
                 <p style={{ margin: '1rem auto', maxWidth: '600px', color: 'var(--color-text-muted)' }}>
                     We specialize in bespoke development for unique government and enterprise challenges.
                 </p>
-                <Button to="/contact">Request Consultation</Button>
+                <Button href="mailto:info@caledoniaheights.co.ke">Request Consultation</Button>
             </Section>
         </div>
     );

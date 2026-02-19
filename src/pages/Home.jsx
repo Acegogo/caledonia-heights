@@ -20,7 +20,7 @@ const Home = () => {
                         for government and large enterprises.
                     </p>
                     <div className="hero-actions">
-                        <Button to="/contact" variant="primary">Request Proposal</Button>
+                        <Button href="mailto:info@caledoniaheights.co.ke" variant="primary">Request Consultation</Button>
                         <Button to="/solutions" variant="secondary" className="btn-outline-light">Explore Solutions</Button>
                     </div>
                 </div>
@@ -123,10 +123,9 @@ const Home = () => {
                 <div className="cta-content text-center">
                     <h2 className="section-title">Ready for a Long-Term Technology Partner?</h2>
                     <p className="section-subtitle" style={{ maxWidth: '700px', margin: '0 auto 2rem' }}>
-                        We are ready to qualify for upcoming government framework contracts and enterprise tenders.
-                        Let's discuss how Caledonia Heights can support your mission-critical infrastructure.
+                        Let's discuss how Caledonia Heights can support your mission-critical infrastructure and enterprise goals.
                     </p>
-                    <Button to="/contact" className="btn-white">Contact Our Team</Button>
+                    <Button href="mailto:info@caledoniaheights.co.ke" className="btn-white">Contact Our Team</Button>
                 </div>
             </Section>
         </div>

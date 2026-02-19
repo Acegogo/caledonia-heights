@@ -9,6 +9,10 @@ const Button = ({ children, to, variant = 'primary', className = '', ...props })
         return <Link to={to} className={classes} {...props}>{children}</Link>;
     }
 
+    if (props.href) {
+        return <a className={classes} {...props}>{children}</a>;
+    }
+
     return <button className={classes} {...props}>{children}</button>;
 };
 
