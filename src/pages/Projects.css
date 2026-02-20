@@ -62,3 +62,17 @@
 .projects-hero {
     text-align: center;
 }
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+    color: var(--color-accent);
+}
