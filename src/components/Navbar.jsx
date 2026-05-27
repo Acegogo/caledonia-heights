@@ -63,8 +63,9 @@ const Navbar = () => {
   );
 
   return (
-    <header className={`nav ${isScrolled ? 'nav--scrolled' : ''}`}>
-      <div className="container nav__inner">
+    <>
+      <header className={`nav ${isScrolled ? 'nav--scrolled' : ''}${mobileOpen ? ' nav--menu-open' : ''}`}>
+        <div className="container nav__inner">
         <Link to="/" className="nav__brand" aria-label="Caledonia Heights home" onClick={closeDropdown}>
           <img src="/assets/images/logo.png" alt="Caledonia Heights" className="nav__logo" />
         </Link>
@@ -148,40 +149,45 @@ const Navbar = () => {
             <IconMenu2 size={24} />
           </button>
         </div>
-      </div>
+        </div>
+      </header>
 
       {mobileOpen ? (
         <div className="nav__mobileOverlay" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-          <div className="nav__mobileTop">
-            <Link to="/" className="nav__brand" onClick={closeDropdown}>
-              <img src="/assets/images/logo.png" alt="Caledonia Heights" className="nav__logo" />
-            </Link>
-            <button className="nav__close" type="button" onClick={closeDropdown} aria-label="Close menu">
-              <IconX size={24} />
-            </button>
-          </div>
+          <div className="nav__mobilePanel">
+            <div className="nav__mobileTop">
+              <Link to="/" className="nav__brand" onClick={closeDropdown}>
+                <img src="/assets/images/logo.png" alt="Caledonia Heights" className="nav__logo" />
+              </Link>
+              <button className="nav__close" type="button" onClick={closeDropdown} aria-label="Close menu">
+                <IconX size={24} />
+              </button>
+            </div>
 
-          <div className="nav__mobileLinks">
-            <Link to="/" onClick={closeDropdown}>Home</Link>
-            <Link to="/about" onClick={closeDropdown}>About</Link>
-            <Link to="/services" onClick={closeDropdown}>Services</Link>
-            <Link to="/smart-water" onClick={closeDropdown}>Smart Water</Link>
-            <Link to="/majismart" onClick={closeDropdown}>MajiSmart</Link>
-            <Link to="/ai-solutions" onClick={closeDropdown}>AI Solutions</Link>
-            <Link to="/platforms" onClick={closeDropdown}>Platforms</Link>
-            <Link to="/projects" onClick={closeDropdown}>Projects</Link>
-            <Link to="/contact" onClick={closeDropdown}>Contact</Link>
-          </div>
+            <nav className="nav__mobileLinks" aria-label="Mobile navigation links">
+              <Link to="/" onClick={closeDropdown}>Home</Link>
+              <Link to="/about" onClick={closeDropdown}>About</Link>
+              <div className="nav__mobileGroupTitle">Services</div>
+              <Link to="/services" onClick={closeDropdown}>All Services</Link>
+              <Link to="/smart-water" onClick={closeDropdown}>Smart Water</Link>
+              <Link to="/majismart" onClick={closeDropdown}>MajiSmart</Link>
+              <Link to="/ai-solutions" onClick={closeDropdown}>AI Solutions</Link>
+              <div className="nav__mobileGroupTitle">Company</div>
+              <Link to="/platforms" onClick={closeDropdown}>Platforms</Link>
+              <Link to="/projects" onClick={closeDropdown}>Projects</Link>
+              <Link to="/contact" onClick={closeDropdown}>Contact</Link>
+            </nav>
 
-          <div className="nav__mobileCtas">
-            <Link className="btn btn-primary" to="/contact" onClick={closeDropdown}>Get in Touch →</Link>
-            <a className="btn btn-green" href="https://wa.me/254708001000" target="_blank" rel="noreferrer">
-              WhatsApp →
-            </a>
+            <div className="nav__mobileCtas">
+              <Link className="btn btn-primary" to="/contact" onClick={closeDropdown}>Get in Touch →</Link>
+              <a className="btn btn-green" href="https://wa.me/254708001000" target="_blank" rel="noreferrer">
+                WhatsApp →
+              </a>
+            </div>
           </div>
         </div>
       ) : null}
-    </header>
+    </>
   );
 };
 
