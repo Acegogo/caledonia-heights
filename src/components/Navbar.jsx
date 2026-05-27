@@ -1,194 +1,212 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { IconChevronDown, IconMenu2, IconX } from '@tabler/icons-react';
+import { createPortal } from 'react-dom';
+import {
+  IconChevronDown,
+  IconX,
+  IconMenu2,
+  IconBrandWhatsapp,
+} from '@tabler/icons-react';
 import './Navbar.css';
 
-const Navbar = () => {
-  const location = useLocation();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+const NAV_SERVICES = [
+  { label: 'Smart Water Metering', to: '/smart-water' },
+  { label: 'MajiSmart Irrigation', to: '/majismart' },
+  { label: 'AI Business Agents', to: '/ai-solutions' },
+  { label: 'Custom Software', to: '/services' },
+  { label: 'Enterprise ERP', to: '/services' },
+  { label: 'Cloud Hosting', to: '/services' },
+];
+
+const NAV_PLATFORMS = [
+  { label: 'MajiSmart', to: '/majismart' },
+  { label: 'NB-IoT Metering', to: '/smart-water' },
+  { label: 'STS Prepaid Water', to: '/smart-water' },
+  { label: 'All Platforms', to: '/platforms' },
+];
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-
-  const closeDropdown = () => {
-    setActiveDropdown(null);
-    setMobileOpen(false);
-  };
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 80);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     // Close menus when the route changes (e.g. browser back/forward)
     // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional reset on navigation
+    setMenuOpen(false);
     setActiveDropdown(null);
-    setMobileOpen(false);
-  }, [location.pathname]);
+  }, [location]);
 
   useEffect(() => {
-    if (!mobileOpen) return;
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') closeDropdown();
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [mobileOpen]);
-
-  useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
-  }, [mobileOpen]);
+  }, [menuOpen]);
 
   useEffect(() => {
-    if (!activeDropdown) return;
-    const onClickOutside = (e) => {
-      if (!e.target.closest('.nav__dropdown')) {
-        setActiveDropdown(null);
-      }
-    };
-    document.addEventListener('click', onClickOutside);
-    return () => document.removeEventListener('click', onClickOutside);
-  }, [activeDropdown]);
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-  const navLinkClass = ({ isActive }) => `navlink ${isActive ? 'navlink--active' : ''}`;
+  const closeDropdown = () => setActiveDropdown(null);
+  const closeAll = () => { setMenuOpen(false); setActiveDropdown(null); };
 
-  const servicesActive = ['/services', '/smart-water', '/majismart', '/ai-solutions'].some(
-    (path) => location.pathname === path || location.pathname.startsWith(`${path}/`),
-  );
-  const platformsActive = ['/platforms', '/smart-water', '/majismart'].some(
-    (path) => location.pathname === path || location.pathname.startsWith(`${path}/`),
+  const mobileMenu = createPortal(
+    <div className={`mobile-overlay ${menuOpen ? 'mobile-overlay--open' : ''}`} aria-hidden={!menuOpen}>
+      <div className="mobile-overlay__header">
+        <Link to="/" onClick={closeAll}>
+          <img src="/assets/images/logo.png" alt="Caledonia Heights" className="mobile-overlay__logo" />
+        </Link>
+        <button type="button" className="mobile-close-btn" onClick={() => setMenuOpen(false)} aria-label="Close menu">
+          <IconX size={24} />
+        </button>
+      </div>
+
+      <nav className="mobile-overlay__nav" aria-label="Mobile navigation">
+        <NavLink to="/" className="mobile-nav-link" onClick={closeAll}>Home</NavLink>
+        <NavLink to="/about" className="mobile-nav-link" onClick={closeAll}>About</NavLink>
+
+        <div className="mobile-accordion">
+          <button
+            type="button"
+            className="mobile-accordion__trigger"
+            onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
+          >
+            <span>Services</span>
+            <IconChevronDown
+              size={18}
+              className={`mobile-accordion__chevron ${activeDropdown === 'services' ? 'is-open' : ''}`}
+            />
+          </button>
+          {activeDropdown === 'services' && (
+            <div className="mobile-accordion__panel">
+              {NAV_SERVICES.map((item) => (
+                <NavLink key={item.label} to={item.to} className="mobile-sub-link" onClick={closeAll}>
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="mobile-accordion">
+          <button
+            type="button"
+            className="mobile-accordion__trigger"
+            onClick={() => setActiveDropdown(activeDropdown === 'platforms' ? null : 'platforms')}
+          >
+            <span>Platforms</span>
+            <IconChevronDown
+              size={18}
+              className={`mobile-accordion__chevron ${activeDropdown === 'platforms' ? 'is-open' : ''}`}
+            />
+          </button>
+          {activeDropdown === 'platforms' && (
+            <div className="mobile-accordion__panel">
+              {NAV_PLATFORMS.map((item) => (
+                <NavLink key={item.label} to={item.to} className="mobile-sub-link" onClick={closeAll}>
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <NavLink to="/ai-solutions" className="mobile-nav-link" onClick={closeAll}>AI Solutions</NavLink>
+        <NavLink to="/projects" className="mobile-nav-link" onClick={closeAll}>Projects</NavLink>
+        <NavLink to="/contact" className="mobile-nav-link" onClick={closeAll}>Contact</NavLink>
+      </nav>
+
+      <div className="mobile-overlay__cta">
+        <Link to="/contact" className="mobile-cta-btn mobile-cta-btn--primary" onClick={closeAll}>
+          Get in Touch →
+        </Link>
+        <a
+          href="https://wa.me/254708001000"
+          className="mobile-cta-btn mobile-cta-btn--whatsapp"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={closeAll}
+        >
+          <IconBrandWhatsapp size={18} /> WhatsApp
+        </a>
+      </div>
+    </div>,
+    document.body,
   );
 
   return (
     <>
-      <header className={`nav ${isScrolled ? 'nav--scrolled' : ''}${mobileOpen ? ' nav--menu-open' : ''}`}>
-        <div className="container nav__inner">
-        <Link to="/" className="nav__brand" aria-label="Caledonia Heights home" onClick={closeDropdown}>
-          <img src="/assets/images/logo.png" alt="Caledonia Heights" className="nav__logo" />
-        </Link>
+      <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+        <div className="navbar__inner">
+          <Link to="/" className="navbar__logo-link" aria-label="Caledonia Heights home">
+            <div className="nav-logo-wrap">
+              <img src="/assets/images/logo.png" alt="Caledonia Heights" className="nav-logo" />
+            </div>
+          </Link>
 
-        <nav className="nav__links" aria-label="Primary navigation">
-          <NavLink to="/" className={navLinkClass} end onClick={closeDropdown}>Home</NavLink>
-          <NavLink to="/about" className={navLinkClass} onClick={closeDropdown}>About</NavLink>
+          <nav className="navbar__desktop" aria-label="Primary navigation">
+            <NavLink to="/" className="nav-link" end>Home</NavLink>
+            <NavLink to="/about" className="nav-link">About</NavLink>
 
-          <div className={`nav__dropdown nav-item--dropdown${activeDropdown === 'services' ? ' is-open' : ''}`}>
-            <NavLink
-              to="/services"
-              className={({ isActive }) => `navlink ${isActive || servicesActive ? 'navlink--active' : ''}`}
-              onClick={() => setActiveDropdown(null)}
-            >
-              Services
-            </NavLink>
-            <button
-              type="button"
-              className="nav-chevron"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setActiveDropdown(activeDropdown === 'services' ? null : 'services');
-              }}
-              aria-label="Toggle services menu"
-              aria-expanded={activeDropdown === 'services'}
-            >
-              <IconChevronDown size={14} />
-            </button>
-            {activeDropdown === 'services' && (
-              <div className="nav__dropdownMenu nav__dropdownMenu--open dropdown-panel" role="menu">
-                <Link to="/smart-water" className="dropdown-item" role="menuitem" onClick={closeDropdown}>Smart Water Metering</Link>
-                <Link to="/majismart" className="dropdown-item" role="menuitem" onClick={closeDropdown}>MajiSmart Irrigation</Link>
-                <Link to="/ai-solutions" className="dropdown-item" role="menuitem" onClick={closeDropdown}>AI Business Agents</Link>
-                <Link to="/services" className="dropdown-item" role="menuitem" onClick={closeDropdown}>Custom Software</Link>
-                <Link to="/services" className="dropdown-item" role="menuitem" onClick={closeDropdown}>Enterprise ERP</Link>
-                <Link to="/services" className="dropdown-item" role="menuitem" onClick={closeDropdown}>Cloud Hosting</Link>
-              </div>
-            )}
-          </div>
+            <div className="nav-item--dropdown" onMouseLeave={closeDropdown}>
+              <Link to="/services" className="nav-link" onClick={closeDropdown}>Services</Link>
+              <button
+                type="button"
+                className="nav-chevron"
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setActiveDropdown(activeDropdown === 'services' ? null : 'services'); }}
+                aria-label="Toggle services menu"
+              >
+                <IconChevronDown size={14} />
+              </button>
+              {activeDropdown === 'services' && (
+                <div className="dropdown-panel">
+                  {NAV_SERVICES.map((item) => (
+                    <Link key={item.label} to={item.to} className="dropdown-item" onClick={closeDropdown}>{item.label}</Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-          <div className={`nav__dropdown nav-item--dropdown${activeDropdown === 'platforms' ? ' is-open' : ''}`}>
-            <NavLink
-              to="/platforms"
-              className={({ isActive }) => `navlink ${isActive || platformsActive ? 'navlink--active' : ''}`}
-              onClick={() => setActiveDropdown(null)}
-            >
-              Platforms
-            </NavLink>
-            <button
-              type="button"
-              className="nav-chevron"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setActiveDropdown(activeDropdown === 'platforms' ? null : 'platforms');
-              }}
-              aria-label="Toggle platforms menu"
-              aria-expanded={activeDropdown === 'platforms'}
-            >
-              <IconChevronDown size={14} />
-            </button>
-            {activeDropdown === 'platforms' && (
-              <div className="nav__dropdownMenu nav__dropdownMenu--open dropdown-panel" role="menu">
-                <Link to="/majismart" className="dropdown-item" role="menuitem" onClick={closeDropdown}>MajiSmart</Link>
-                <Link to="/smart-water" className="dropdown-item" role="menuitem" onClick={closeDropdown}>NB-IoT Metering</Link>
-                <Link to="/smart-water" className="dropdown-item" role="menuitem" onClick={closeDropdown}>STS Prepaid Water</Link>
-                <Link to="/platforms" className="dropdown-item" role="menuitem" onClick={closeDropdown}>All Platforms</Link>
-              </div>
-            )}
-          </div>
+            <div className="nav-item--dropdown" onMouseLeave={closeDropdown}>
+              <Link to="/platforms" className="nav-link" onClick={closeDropdown}>Platforms</Link>
+              <button
+                type="button"
+                className="nav-chevron"
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setActiveDropdown(activeDropdown === 'platforms' ? null : 'platforms'); }}
+                aria-label="Toggle platforms menu"
+              >
+                <IconChevronDown size={14} />
+              </button>
+              {activeDropdown === 'platforms' && (
+                <div className="dropdown-panel">
+                  {NAV_PLATFORMS.map((item) => (
+                    <Link key={item.label} to={item.to} className="dropdown-item" onClick={closeDropdown}>{item.label}</Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-          <NavLink to="/ai-solutions" className={navLinkClass} onClick={closeDropdown}>AI Solutions</NavLink>
-          <NavLink to="/projects" className={navLinkClass} onClick={closeDropdown}>Projects</NavLink>
-          <NavLink to="/contact" className={navLinkClass} onClick={closeDropdown}>Contact</NavLink>
-        </nav>
+            <NavLink to="/ai-solutions" className="nav-link">AI Solutions</NavLink>
+            <NavLink to="/projects" className="nav-link">Projects</NavLink>
+            <NavLink to="/contact" className="nav-link">Contact</NavLink>
+          </nav>
 
-        <div className="nav__actions">
-          <Link to="/contact" className="btn btn-primary" onClick={closeDropdown}>Get in Touch</Link>
-          <button className="nav__burger" type="button" onClick={() => setMobileOpen(true)} aria-label="Open menu">
-            <IconMenu2 size={24} />
+          <Link to="/contact" className="navbar__cta btn-primary btn--sm">Get in Touch</Link>
+
+          <button
+            type="button"
+            className="navbar__hamburger"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <IconMenu2 size={26} />
           </button>
-        </div>
         </div>
       </header>
 
-      {mobileOpen ? (
-        <div className="nav__mobileOverlay" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-          <div className="nav__mobilePanel">
-            <div className="nav__mobileTop">
-              <Link to="/" className="nav__brand" onClick={closeDropdown}>
-                <img src="/assets/images/logo.png" alt="Caledonia Heights" className="nav__logo" />
-              </Link>
-              <button className="nav__close" type="button" onClick={closeDropdown} aria-label="Close menu">
-                <IconX size={24} />
-              </button>
-            </div>
-
-            <nav className="nav__mobileLinks" aria-label="Mobile navigation links">
-              <Link to="/" onClick={closeDropdown}>Home</Link>
-              <Link to="/about" onClick={closeDropdown}>About</Link>
-              <div className="nav__mobileGroupTitle">Services</div>
-              <Link to="/services" onClick={closeDropdown}>All Services</Link>
-              <Link to="/smart-water" onClick={closeDropdown}>Smart Water</Link>
-              <Link to="/majismart" onClick={closeDropdown}>MajiSmart</Link>
-              <Link to="/ai-solutions" onClick={closeDropdown}>AI Solutions</Link>
-              <div className="nav__mobileGroupTitle">Company</div>
-              <Link to="/platforms" onClick={closeDropdown}>Platforms</Link>
-              <Link to="/projects" onClick={closeDropdown}>Projects</Link>
-              <Link to="/contact" onClick={closeDropdown}>Contact</Link>
-            </nav>
-
-            <div className="nav__mobileCtas">
-              <Link className="btn btn-primary" to="/contact" onClick={closeDropdown}>Get in Touch →</Link>
-              <a className="btn btn-green" href="https://wa.me/254708001000" target="_blank" rel="noreferrer">
-                WhatsApp →
-              </a>
-            </div>
-          </div>
-        </div>
-      ) : null}
+      {mobileMenu}
     </>
   );
-};
-
-export default Navbar;
+}
