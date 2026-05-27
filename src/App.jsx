@@ -1,32 +1,42 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import RootLayout from './layouts/RootLayout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Solutions from './pages/Solutions';
-import Platforms from './pages/Platforms';
-import Industries from './pages/Industries';
-import Projects from './pages/Projects';
-import WhyUs from './pages/WhyUs';
-import Contact from './pages/Contact';
 import './App.css';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Platforms = lazy(() => import('./pages/Platforms'));
+const MajiSmart = lazy(() => import('./pages/MajiSmart'));
+const SmartWater = lazy(() => import('./pages/SmartWater'));
+const AiSolutions = lazy(() => import('./pages/AiSolutions'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Contact = lazy(() => import('./pages/Contact'));
+
+const PageLoader = () => (
+  <div style={{ minHeight: '60vh', background: '#040E1C' }} aria-hidden="true" />
+);
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<RootLayout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="solutions" element={<Solutions />} />
-          <Route path="platforms" element={<Platforms />} />
-          <Route path="industries" element={<Industries />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="why-us" element={<WhyUs />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<RootLayout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="services" element={<Services />} />
+            <Route path="platforms" element={<Platforms />} />
+            <Route path="majismart" element={<MajiSmart />} />
+            <Route path="smart-water" element={<SmartWater />} />
+            <Route path="ai-solutions" element={<AiSolutions />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

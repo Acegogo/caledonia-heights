@@ -1,0 +1,85 @@
+import { images } from './images';
+
+export const projectCategories = [
+  'All',
+  'Smart Water',
+  'AI & Software',
+  'Web & ERP',
+  'Agriculture',
+];
+
+export const projects = [
+  {
+    id: 'majismart-flagship',
+    name: 'MajiSmart Irrigation System',
+    category: 'Agriculture',
+    desc: '10-acre smart irrigation deployment: solar boreholes + NB-IoT sensors + automated drip + real-time dashboard.',
+    tech: ['IoT', 'NB-IoT', 'React', 'Node.js'],
+    image: images.farmIrrigation,
+    link: '/majismart',
+  },
+  {
+    id: 'bns-nbiot',
+    name: 'Caldora NB-IoT Metering Platform',
+    category: 'Smart Water',
+    desc: 'Real-time water monitoring for property managers with alarms, analytics, and remote valve control.',
+    tech: ['Next.js', 'Node.js', 'Supabase', 'NB-IoT'],
+    image: images.dashboardNbiot,
+    link: 'https://bns-nbiot.vercel.app',
+  },
+  {
+    id: 'bns-sts-prepaid',
+    name: 'Caldora STS Prepaid Water',
+    category: 'Smart Water',
+    desc: 'M-Pesa prepaid water vending with STS token delivery and portal-based management.',
+    tech: ['Laravel 12', 'Daraja API', 'Caldora API'],
+    image: images.dashboardSts,
+    link: 'https://prepaidmeters.bnsalgotech.co.ke',
+  },
+  {
+    id: 'ai-duciel',
+    name: 'AI Sales Concierge — Duciel Africa Adventures',
+    category: 'AI & Software',
+    desc: 'Custom AI sales agent to qualify leads and automate booking inquiries.',
+    tech: ['AI Agent', 'WhatsApp', 'Automation'],
+    image: '/assets/images/ducieladventures.com.png',
+    link: 'https://ducieladventures.com',
+  },
+  {
+    id: 'ai-phonesoncredit',
+    name: 'AI Sales Automation — PhonesOnCredit',
+    category: 'AI & Software',
+    desc: 'Automated sales pipeline from first inquiry to conversion with lead qualification and follow-up automation.',
+    tech: ['AI Agent', 'CRM', 'Automation'],
+    image: '',
+    link: '',
+  },
+  {
+    id: 'legendpetro',
+    name: 'Legend Petro Website',
+    category: 'Web & ERP',
+    desc: 'Corporate website for real estate, construction, and civil works.',
+    tech: ['Web', 'Hosting', 'Maintenance'],
+    image: '/assets/images/project-legend.jpg',
+    link: 'https://legendpetro.co.ke',
+  },
+  {
+    id: 'dellcreek',
+    name: 'Dell Creek Real Estate',
+    category: 'Web & ERP',
+    desc: 'Land sales and property development website with verified listing capabilities.',
+    tech: ['Web', 'Hosting', 'Maintenance'],
+    image: '/assets/images/dellcreek-developers.vercel.app.png',
+    link: 'https://dellcreek-developers.vercel.app/',
+  },
+  {
+    id: 'bnsalgotech',
+    name: 'BNS Algotech Corporate Site',
+    category: 'Web & ERP',
+    desc: 'Corporate website for a technology solutions provider with deployment and managed hosting.',
+    tech: ['Design', 'Deployment', 'Managed Hosting'],
+    image: '/assets/images/project-bnsalgotech.jpg',
+    link: 'https://bnsalgotech.co.ke',
+  },
+];
+

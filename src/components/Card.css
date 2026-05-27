@@ -1,41 +1,56 @@
 .card {
-    background-color: white;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-lg);
-    display: flex;
-    flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  color: var(--text-bright);
 }
 
 .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-accent);
-    transition: all 0.3s ease;
+  transform: translateY(-5px);
+  border-color: var(--border-subtle);
+  box-shadow: var(--glow-cyan);
+  transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
 }
 
 .card-title {
-    font-size: var(--text-xl);
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
 .card-content {
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    flex-grow: 1;
+  color: var(--text-bright);
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
 .card-footer {
-    margin-top: var(--spacing-md);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid var(--color-border);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-card);
 }
 
 .card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: var(--radius-sm);
-    margin-bottom: var(--spacing-md);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
+
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5 {
+  color: var(--text-white);
+}
+
+.card p,
+.card li {
+  color: var(--text-bright);
 }

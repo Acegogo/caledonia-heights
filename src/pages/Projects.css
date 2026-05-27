@@ -1,78 +1,189 @@
+/* New Projects page styling */
+.projectsNew__filters {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.4rem;
+}
+
+.projectsNew__cardTop {
+  border-bottom: 1px solid rgba(0, 200, 255, 0.10);
+}
+
+.projectsNew__img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.projectsNew__imgPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 200, 255, 0.25), rgba(0, 0, 0, 0) 55%),
+    radial-gradient(circle at 80% 60%, rgba(0, 232, 122, 0.18), rgba(0, 0, 0, 0) 55%),
+    linear-gradient(180deg, rgba(13, 31, 56, 1), rgba(2, 11, 24, 1));
+}
+
+.projectsNew__cardBody {
+  padding: 1.4rem;
+}
+
+.projectsNew__category {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--cyan);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.projectsNew__title {
+  margin-bottom: 0.65rem;
+  color: var(--text-white);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.project-card,
+.portfolio-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
+}
+
+.project-card:hover,
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-subtle);
+  box-shadow: var(--glow-cyan);
+}
+
+.project-card-body,
+.card-content,
+.project-info {
+  background: var(--bg-card) !important;
+  padding: 1.5rem;
+}
+
+.project-card h3,
+.project-card h4,
+.portfolio-card h3,
+.portfolio-card h4 {
+  color: var(--text-white) !important;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.project-card p,
+.portfolio-card p {
+  color: var(--text-bright) !important;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.project-category,
+.card-category {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--cyan);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.tech-pill,
+.tag-pill {
+  background: rgba(0, 212, 255, 0.1) !important;
+  color: var(--cyan) !important;
+  border: 1px solid rgba(0, 212, 255, 0.25) !important;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.625rem;
+}
+
 .project-category {
-    display: inline-block;
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    color: var(--color-accent);
-    font-weight: 700;
-    margin-bottom: var(--spacing-sm);
-    letter-spacing: 0.05em;
+  display: inline-block;
+  font-size: var(--text-xs);
+  color: var(--cyan);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.04em;
 }
 
 .project-card h3 {
-    margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .project-tech-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
 }
 
 .project-img-wrapper {
-    height: 220px;
-    overflow: hidden;
-    border-radius: var(--radius-sm);
-    margin-bottom: var(--spacing-md);
-    margin-left: -16px;
-    /* Counteract padding to bleed edges or just keep standard */
-    margin-right: -16px;
-    margin-top: -16px;
-    border-bottom: 1px solid var(--color-border);
+  height: 220px;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-top: -16px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .project-card .project-img-wrapper {
-    /* Resetting negative margins if Card padding handling is different, 
-      but for 'Card' component which has padding, negative margin makes it full width header */
-    margin: calc(var(--spacing-lg) * -1);
-    margin-bottom: var(--spacing-md);
-    width: calc(100% + (var(--spacing-lg) * 2));
+  margin: calc(var(--spacing-lg) * -1);
+  margin-bottom: var(--spacing-md);
+  width: calc(100% + (var(--spacing-lg) * 2));
 }
 
 .project-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover .project-img-wrapper img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .tech-badge {
-    background-color: var(--color-bg-alt);
-    border: 1px solid var(--color-border);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
 }
 
 .projects-hero {
-    text-align: center;
+  text-align: center;
 }
 
 .btn-link {
-    display: inline-flex;
-    align-items: center;
-    color: var(--color-primary);
-    font-weight: 600;
-    text-decoration: none;
-    font-size: var(--text-sm);
-    transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: color 0.2s ease;
 }
 
 .btn-link:hover {
-    color: var(--color-accent);
+  color: var(--color-accent);
 }

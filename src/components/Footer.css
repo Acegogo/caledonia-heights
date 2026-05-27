@@ -1,54 +1,169 @@
-.footer {
-    background-color: var(--color-primary);
-    color: white;
-    padding: var(--spacing-2xl) 0 var(--spacing-lg);
+.footerNew {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-deep) 100%);
+  border-top: 1px solid var(--border-card);
+  padding: 4.5rem 0 2.3rem;
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+.footerNew__top {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 2.2rem;
+}
+
+.footerNew__brand {
+  padding: 1.35rem;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--card-shadow);
+}
+
+.footer-logo-wrap {
+  background: white;
+  border-radius: 10px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .footer-logo {
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-md);
+  height: 38px;
+  width: auto;
+  max-width: 160px;
+  display: block;
+  border-radius: 6px;
 }
 
-.footer-text {
-    color: var(--color-text-muted);
-    /* Will need to adjust for dark bg */
-    color: #94A3B8;
-    /* Slate 400 override for dark bg */
-    line-height: 1.6;
-    font-size: var(--text-sm);
+.footerNew__tagline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text-white);
 }
 
-.footer-col h4 {
-    color: white;
-    margin-bottom: var(--spacing-md);
-    font-size: var(--text-base);
+.footerNew__desc {
+  margin-top: 0.7rem;
+  line-height: 1.75;
 }
 
-.footer-col ul li {
-    margin-bottom: var(--spacing-sm);
+.footerNew__social {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
 }
 
-.footer-col ul li a {
-    color: #94A3B8;
-    font-size: var(--text-sm);
+.footerNew__socialBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-dark);
+  font-weight: 700;
+  color: var(--text-bright);
 }
 
-.footer-col ul li a:hover {
-    color: white;
+.footerNew__socialBtn:hover {
+  box-shadow: var(--glow-cyan);
+  color: var(--text-white);
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: var(--spacing-lg);
-    text-align: center;
-    color: #64748B;
-    font-size: var(--text-xs);
+.footerNew__cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.6rem;
+  align-content: start;
+  position: relative;
+  z-index: 2;
+}
+
+.footerNew__col {
+  display: grid;
+  gap: 0.55rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-white);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.footerNew__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer-link {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  padding: 0.25rem 0;
+  transition: color var(--t-fast);
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.footer-link--text {
+  cursor: default;
+  line-height: 1.7;
+}
+
+.footer-link:hover {
+  color: var(--cyan);
+}
+
+.footerNew__address {
+  margin-top: 0.25rem;
+  line-height: 1.7;
+}
+
+.footerNew__bottom {
+  margin-top: 2.4rem;
+}
+
+.footerNew__bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.1rem;
+}
+
+.footerNew__bottomRow p {
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.footerNew p,
+.footerNew li,
+.footer-link {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+@media (max-width: 980px) {
+  .footerNew__top {
+    grid-template-columns: 1fr;
+  }
+  .footerNew__cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
