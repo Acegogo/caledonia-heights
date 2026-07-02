@@ -7,7 +7,7 @@ export const images = {
   aboutHero: '/assets/images/about-hero.jpg',
   servicesHero: '/assets/images/services-hero.jpg',
   platformsHero: '/assets/images/platforms-hero.jpg',
-  majigridHero: '/assets/images/majigrid-hero.jpg',
+  majigridHero: '/assets/images/majismart-hero.jpg',
   smartWaterHero: '/assets/images/smart-water-hero.jpg',
   aiHero: '/assets/images/ai-hero.jpg',
   projectsHero: '/assets/images/projects-hero.jpg',
