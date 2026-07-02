@@ -23,6 +23,6 @@ export const images = {
   nbiotInstallation: '/assets/images/nbiot-installation.jpg',
 
   // MajiGrid / agriculture
-  majigridDashboard: '/assets/images/majigrid-dashboard.jpg',
+  majigridDashboard: '/assets/images/majismart-dashboard.jpg',
   farmIrrigation: '/assets/images/farm-irrigation.jpg',
 };
