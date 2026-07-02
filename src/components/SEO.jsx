@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 export default function SEO({ title, description, keywords, canonical, ogImage }) {
   const siteName = 'Caledonia Heights Limited';
   const siteUrl = 'https://caledoniaheights.co.ke';
-  const defaultDesc = 'Caledonia Heights Limited — premier technology partner for smart water metering, AI business agents, MajiSmart irrigation, custom software, and ERP systems. Est. 2018, Nairobi.';
+  const defaultDesc = 'Caledonia Heights Limited — premier technology partner for smart water metering, AI business agents, MajiGrid irrigation, custom software, and ERP systems. Est. 2018, Nairobi.';
   const defaultImg = `${siteUrl}/assets/images/og-image.jpg`;
 
   return (

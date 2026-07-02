@@ -10,13 +10,13 @@ export const services = [
     badge: 'IoT',
   },
   {
-    id: 'majismart',
-    title: 'MajiSmart Irrigation',
+    id: 'majigrid',
+    title: 'MajiGrid Irrigation',
     icon: 'IconPlant2',
     accent: 'var(--green)',
     accentGlow: 'rgba(0, 240, 144, 0.25)',
     description: 'AI-powered smart irrigation intelligence for farms, schemes, and county programs. Field-to-dashboard water management.',
-    link: '/majismart',
+    link: '/majigrid',
     badge: 'AI + IoT',
   },
   {

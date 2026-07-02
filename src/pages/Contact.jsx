@@ -36,7 +36,7 @@ const Contact = () => {
       />
       <PageHero
         title="Partner With Us"
-        subtitle="Ready to discuss smart water, MajiSmart, AI automation, or enterprise systems? We respond within 24 hours."
+        subtitle="Ready to discuss smart water, MajiGrid, AI automation, or enterprise systems? We respond within 24 hours."
         badge="Contact"
         bgVariant="surface"
         backgroundImage={images.contactHero}
@@ -138,7 +138,7 @@ const Contact = () => {
                 <select className="form-select" id="service" name="service" defaultValue="">
                   <option value="" disabled>Select a service</option>
                   <option>Smart Water Metering</option>
-                  <option>MajiSmart Irrigation</option>
+                  <option>MajiGrid Irrigation</option>
                   <option>AI Business Agents</option>
                   <option>Custom Software Development</option>
                   <option>ERP System</option>

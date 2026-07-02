@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { IconBrandWhatsapp, IconMail } from '@tabler/icons-react';
+import { IconBrandWhatsapp, IconMail, IconBrandLinkedin } from '@tabler/icons-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -27,6 +27,9 @@ const Footer = () => {
             <a className="footerNew__socialBtn" href="mailto:info@caledoniaheights.co.ke">
               <IconMail size={18} /> Email
             </a>
+            <a className="footerNew__socialBtn" href="https://www.linkedin.com/company/caledonia-heights/about/" target="_blank" rel="noreferrer">
+              <IconBrandLinkedin size={18} /> LinkedIn
+            </a>
           </div>
         </div>
 
@@ -41,14 +44,14 @@ const Footer = () => {
           <div className="footerNew__col">
             <div className="footerNew__title footer-heading">Services</div>
             <Link to="/smart-water" className="footer-link">Smart Water</Link>
-            <Link to="/majismart" className="footer-link">MajiSmart</Link>
+            <Link to="/majigrid" className="footer-link">MajiGrid</Link>
             <Link to="/ai-solutions" className="footer-link">AI Solutions</Link>
             <Link to="/services" className="footer-link">All Services</Link>
           </div>
 
           <div className="footerNew__col">
             <div className="footerNew__title footer-heading">Platforms</div>
-            <Link to="/majismart" className="footer-link">MajiSmart</Link>
+            <Link to="/majigrid" className="footer-link">MajiGrid</Link>
             <Link to="/smart-water" className="footer-link">NB-IoT Metering</Link>
             <Link to="/smart-water" className="footer-link">STS Prepaid</Link>
             <Link to="/platforms" className="footer-link">Platforms Overview</Link>

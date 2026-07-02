@@ -10,13 +10,13 @@ export const projectCategories = [
 
 export const projects = [
   {
-    id: 'majismart-flagship',
-    name: 'MajiSmart Irrigation System',
+    id: 'majigrid-flagship',
+    name: 'MajiGrid Irrigation System',
     category: 'Agriculture',
     desc: '10-acre smart irrigation deployment: solar boreholes + NB-IoT sensors + automated drip + real-time dashboard.',
     tech: ['IoT', 'NB-IoT', 'React', 'Node.js'],
     image: images.farmIrrigation,
-    link: '/majismart',
+    link: '/majigrid',
   },
   {
     id: 'bns-nbiot',

@@ -11,7 +11,7 @@ import './Navbar.css';
 
 const NAV_SERVICES = [
   { label: 'Smart Water Metering', to: '/smart-water' },
-  { label: 'MajiSmart Irrigation', to: '/majismart' },
+  { label: 'MajiGrid Irrigation', to: '/majigrid' },
   { label: 'AI Business Agents', to: '/ai-solutions' },
   { label: 'Custom Software', to: '/services' },
   { label: 'Enterprise ERP', to: '/services' },
@@ -19,7 +19,7 @@ const NAV_SERVICES = [
 ];
 
 const NAV_PLATFORMS = [
-  { label: 'MajiSmart', to: '/majismart' },
+  { label: 'MajiGrid', to: '/majigrid' },
   { label: 'NB-IoT Metering', to: '/smart-water' },
   { label: 'STS Prepaid Water', to: '/smart-water' },
   { label: 'All Platforms', to: '/platforms' },
@@ -30,6 +30,29 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  const closeTimer = useRef(null);
+
+  const openDropdown = (name) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setActiveDropdown(name);
+  };
+
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
+  };
+
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
+  }, []);
 
   useEffect(() => {
     // Close menus when the route changes (e.g. browser back/forward)

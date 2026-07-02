@@ -17,7 +17,7 @@ import Card from '../components/Card';
 import Button from '../components/Button';
 import SEO from '../components/SEO';
 import { images } from '../data/images';
-import './MajiSmart.css';
+import './MajiGrid.css';
 
 const steps = [
   {
@@ -97,21 +97,21 @@ const audiences = [
   'Agricultural cooperatives',
 ];
 
-const MajiSmart = () => {
+const MajiGrid = () => {
   return (
     <div>
       <SEO
-        title="MajiSmart — AI-Powered Smart Irrigation Platform"
-        description="MajiSmart connects irrigation infrastructure to AI-enabled dashboards, alerts, and operational recommendations. Real-time monitoring for farms, schemes, and county water programs."
+        title="MajiGrid — AI-Powered Smart Irrigation Platform"
+        description="MajiGrid connects irrigation infrastructure to AI-enabled dashboards, alerts, and operational recommendations. Real-time monitoring for farms, schemes, and county water programs."
         keywords="smart irrigation, AI irrigation platform, farm water management, irrigation automation, IoT agriculture"
-        canonical="https://caledoniaheights.co.ke/majismart"
+        canonical="https://caledoniaheights.co.ke/majigrid"
       />
       <PageHero
-        title="MajiSmart"
+        title="MajiGrid"
         subtitle="Intelligent Water Management for Modern Agriculture."
         badge="Product"
         bgVariant="surface2"
-        backgroundImage={images.majismartHero}
+        backgroundImage={images.majigridHero}
         ctaText="Request a demo"
         ctaLink="/contact"
         secondaryCtaText="Download brochure"
@@ -126,7 +126,7 @@ const MajiSmart = () => {
             <span className="section-label section-label--green">What it is</span>
             <h2 style={{ marginBottom: '0.8rem' }}>A management system, not a gadget</h2>
             <p className="text-muted" style={{ lineHeight: 1.75, maxWidth: 720 }}>
-              MajiSmart connects physical irrigation infrastructure to AI-enabled dashboards, alerts, reports, and operational recommendations.
+              MajiGrid connects physical irrigation infrastructure to AI-enabled dashboards, alerts, reports, and operational recommendations.
               Designed for farms, irrigation schemes, counties, and national programs.
             </p>
             <div className="pill-row" style={{ marginTop: '1.2rem' }}>
@@ -136,18 +136,18 @@ const MajiSmart = () => {
               <span className="pill">Automation</span>
             </div>
           </div>
-          <div className="majismart-visual">
+          <div className="majigrid-visual">
             <img
-              src={images.majismartDashboard}
-              alt="MajiSmart irrigation management dashboard"
-              className="majismart-visual__dashboard"
+              src={images.majigridDashboard}
+              alt="MajiGrid irrigation management dashboard"
+              className="majigrid-visual__dashboard"
               loading="lazy"
               decoding="async"
             />
             <img
               src={images.farmIrrigation}
               alt="Commercial farm with smart irrigation deployment"
-              className="majismart-visual__farm"
+              className="majigrid-visual__farm"
               loading="lazy"
               decoding="async"
             />
@@ -161,7 +161,7 @@ const MajiSmart = () => {
           <h2>How it works</h2>
           <p>From field sensors to management action — five connected stages.</p>
         </div>
-        <div className="grid grid-3 majismart-steps">
+        <div className="grid grid-3 majigrid-steps">
           {steps.map((step) => (
             <div key={step.number} className="step-card" style={{ '--accent': step.color }}>
               <div className="step-number">{step.number}</div>
@@ -191,9 +191,9 @@ const MajiSmart = () => {
 
       <Section variant="surface2">
         <div className="grid grid-2" style={{ alignItems: 'center', marginBottom: '2.5rem' }}>
-          <div className="majismart-case">
+          <div className="majigrid-case">
             <img src={images.farmIrrigation} alt="10-acre smart irrigation deployment" loading="lazy" decoding="async" />
-            <div className="majismart-case__overlay card-pad">
+            <div className="majigrid-case__overlay card-pad">
               <div className="mono" style={{ color: 'var(--green)', marginBottom: '0.5rem' }}>Flagship case study</div>
               <h3 style={{ marginBottom: '0.5rem' }}>10-acre commercial strawberry farm</h3>
               <p className="text-muted" style={{ lineHeight: 1.7 }}>
@@ -240,4 +240,4 @@ const MajiSmart = () => {
   );
 };
 
-export default MajiSmart;
+export default MajiGrid;

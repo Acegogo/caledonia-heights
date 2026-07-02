@@ -16,7 +16,7 @@ import { services } from '../data/services';
 
 const serviceIcons = {
   'smart-water': IconDroplet,
-  majismart: IconPlant2,
+  majigrid: IconPlant2,
   'ai-solutions': IconRobot,
   'custom-software': IconCode,
   erp: IconBuildingCommunity,
@@ -28,7 +28,7 @@ const Services = () => {
     <div>
       <SEO
         title="Technology Services — Smart Water, AI, Software & ERP"
-        description="End-to-end technology services: smart water metering, MajiSmart irrigation, AI business agents, custom web and mobile apps, enterprise ERP systems, and managed cloud hosting."
+        description="End-to-end technology services: smart water metering, MajiGrid irrigation, AI business agents, custom web and mobile apps, enterprise ERP systems, and managed cloud hosting."
         keywords="smart water solutions, AI business agents, ERP development, web development, IoT platforms, irrigation intelligence"
         canonical="https://caledoniaheights.co.ke/services"
       />

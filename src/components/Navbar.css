@@ -103,7 +103,7 @@
 
 .dropdown-panel {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 4px); /* reduce gap */
   left: 0;
   min-width: 220px;
   background: var(--bg-card);
@@ -113,6 +113,16 @@
   box-shadow: 0 16px 40px rgba(0,0,0,0.4);
   z-index: 200;
   animation: dropIn 0.15s var(--ease-out);
+}
+
+.dropdown-panel::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: transparent;
 }
 
 @keyframes dropIn {

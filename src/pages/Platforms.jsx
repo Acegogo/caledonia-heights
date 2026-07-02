@@ -10,9 +10,9 @@ const Platforms = () => {
   return (
     <div className="platforms-page">
       <SEO
-        title="Our Platforms — MajiSmart, Smart Metering & AI"
-        description="Explore Caledonia's flagship platforms: MajiSmart AI irrigation intelligence, Caldora NB-IoT smart metering, and Caldora STS prepaid water with M-Pesa integration."
-        keywords="MajiSmart irrigation platform, smart water metering platform, prepaid water M-Pesa, NB-IoT metering"
+        title="Our Platforms — MajiGrid, Smart Metering & AI"
+        description="Explore Caledonia's flagship platforms: MajiGrid AI irrigation intelligence, Caldora NB-IoT smart metering, and Caldora STS prepaid water with M-Pesa integration."
+        keywords="MajiGrid irrigation platform, smart water metering platform, prepaid water M-Pesa, NB-IoT metering"
         canonical="https://caledoniaheights.co.ke/platforms"
       />
       <PageHero
@@ -27,11 +27,11 @@ const Platforms = () => {
         secondaryCtaLink="/smart-water"
       />
 
-      {/* MajiSmart */}
-      <Section variant="dark" id="majismart">
+      {/* MajiGrid */}
+      <Section variant="dark" id="majigrid">
         <div className="platform-block">
           <div className="platform-content">
-            <h2 style={{ color: 'var(--color-secondary)' }}>MajiSmart</h2>
+            <h2 style={{ color: 'var(--color-secondary)' }}>MajiGrid</h2>
             <p className="platform-desc text-muted">
               Intelligent irrigation management — from field sensors to AI-enabled dashboards, alerts, and automated control.
             </p>
@@ -40,10 +40,10 @@ const Platforms = () => {
               <li>AI anomaly detection and demand forecasting</li>
               <li>Multi-farm dashboards and mobile alerts</li>
             </ul>
-            <Button className="btn-primary" to="/majismart">Learn more →</Button>
+            <Button className="btn-primary" to="/majigrid">Learn more →</Button>
           </div>
           <div className="platform-visual">
-            <img src={images.majismartDashboard} alt="MajiSmart dashboard" className="dashboard-img" loading="lazy" decoding="async" />
+            <img src={images.majigridDashboard} alt="MajiGrid dashboard" className="dashboard-img" loading="lazy" decoding="async" />
           </div>
         </div>
       </Section>
@@ -115,8 +115,8 @@ const Platforms = () => {
               <p className="text-muted" style={{ lineHeight: 1.7 }}>
                 Solar boreholes, NB-IoT sensors, automated drip irrigation, and a real-time operations dashboard.
               </p>
-              <Link to="/majismart" className="btn btn-secondary" style={{ marginTop: '1rem', display: 'inline-flex' }}>
-                View MajiSmart →
+              <Link to="/majigrid" className="btn btn-secondary" style={{ marginTop: '1rem', display: 'inline-flex' }}>
+                View MajiGrid →
               </Link>
             </div>
           </div>

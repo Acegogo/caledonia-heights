@@ -20,7 +20,7 @@ import './Home.css';
 
 const serviceIcons = {
   'smart-water': IconDroplet,
-  majismart: IconPlant2,
+  majigrid: IconPlant2,
   'ai-solutions': IconRobot,
   'custom-software': IconCode,
   erp: IconBuildingCommunity,
@@ -29,12 +29,12 @@ const serviceIcons = {
 
 const platforms = [
   {
-    name: 'MajiSmart',
+    name: 'MajiGrid',
     desc: 'AI-powered irrigation intelligence for farms and schemes.',
     stat: '10-acre flagship',
     accent: 'green',
-    link: '/majismart',
-    image: images.majismartDashboard,
+    link: '/majigrid',
+    image: images.majigridDashboard,
   },
   {
     name: 'Caldora NB-IoT Smart Metering',
@@ -59,7 +59,7 @@ const Home = () => {
     <div className="home">
       <SEO
         title="Your Long-Term Technology Partner"
-        description="Caledonia Heights builds smart water metering systems, AI business agents, MajiSmart irrigation platforms, custom software, and ERP systems for enterprises, utilities, and institutions."
+        description="Caledonia Heights builds smart water metering systems, AI business agents, MajiGrid irrigation platforms, custom software, and ERP systems for enterprises, utilities, and institutions."
         keywords="smart water metering, NB-IoT water meter, prepaid water M-Pesa, AI chatbot, custom software, ERP system, smart irrigation, IoT platforms"
         canonical="https://caledoniaheights.co.ke"
       />
@@ -96,7 +96,7 @@ const Home = () => {
           >
             <img src={images.dashboardNbiot} alt="NB-IoT metering dashboard" className="mockup mockup--main" decoding="async" />
             <img src={images.dashboardSts} alt="STS prepaid water dashboard" className="mockup mockup--side" decoding="async" />
-            <img src={images.majismartDashboard} alt="MajiSmart irrigation dashboard" className="mockup mockup--back" decoding="async" />
+            <img src={images.majigridDashboard} alt="MajiGrid irrigation dashboard" className="mockup mockup--back" decoding="async" />
           </motion.div>
         </div>
         <div className="scroll-indicator">
@@ -190,8 +190,8 @@ const Home = () => {
               <span className="pill">Automated scheduling</span>
               <span className="pill">M-Pesa</span>
             </div>
-            <Button className="btn-primary" to="/majismart" style={{ marginTop: '1.25rem' }}>
-              Explore MajiSmart →
+            <Button className="btn-primary" to="/majigrid" style={{ marginTop: '1.25rem' }}>
+              Explore MajiGrid →
             </Button>
           </div>
         </div>
@@ -240,7 +240,7 @@ const Home = () => {
         <div className="text-center">
           <h2>Ready to build something extraordinary?</h2>
           <p className="text-muted" style={{ maxWidth: 640, margin: '0.75rem auto 0', lineHeight: 1.75 }}>
-            Talk to us about smart water, MajiSmart, AI automation, or enterprise systems — we respond within 24 hours.
+            Talk to us about smart water, MajiGrid, AI automation, or enterprise systems — we respond within 24 hours.
           </p>
           <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.4rem' }}>
             <Button className="btn-primary" to="/contact">Get in Touch</Button>

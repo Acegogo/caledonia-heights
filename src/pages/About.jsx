@@ -11,7 +11,7 @@ const timeline = [
   { year: '2021', title: 'NB-IoT Smart Metering', desc: 'Deployed Caldora NB-IoT real-time water metering infrastructure across properties.', color: 'var(--purple)' },
   { year: '2022', title: '10-Acre Irrigation', desc: "Flagship smart irrigation deployment on a strawberry farm — one of Africa's most advanced IoT farming deployments.", color: 'var(--orange)' },
   { year: '2023', title: 'AI & Automation', desc: 'Expanded into AI chatbots, sales agents, and workflow automation for businesses.', color: 'var(--gold)' },
-  { year: '2024', title: 'MajiSmart Platform', desc: 'Launched MajiSmart — AI-powered water intelligence for farms, counties, and national programs.', color: 'var(--green)' },
+  { year: '2024', title: 'MajiGrid Platform', desc: 'Launched MajiGrid — AI-powered water intelligence for farms, counties, and national programs.', color: 'var(--green)' },
   { year: '2026', title: 'Growing & Scaling', desc: '50+ clients served. Three product lines. Long-term managed services worldwide.', color: 'var(--cyan)' },
 ];
 
@@ -131,7 +131,7 @@ const About = () => {
         <div className="text-center">
           <h2>Ready to partner with us?</h2>
           <p className="text-muted" style={{ maxWidth: 560, margin: '0.75rem auto 0', lineHeight: 1.75 }}>
-            Whether you need smart water, MajiSmart, AI automation, or a custom enterprise platform — let&apos;s talk.
+            Whether you need smart water, MajiGrid, AI automation, or a custom enterprise platform — let&apos;s talk.
           </p>
           <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.4rem' }}>
             <Button className="btn-primary" to="/contact">Contact our team →</Button>

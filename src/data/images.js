@@ -7,7 +7,7 @@ export const images = {
   aboutHero: '/assets/images/about-hero.jpg',
   servicesHero: '/assets/images/services-hero.jpg',
   platformsHero: '/assets/images/platforms-hero.jpg',
-  majismartHero: '/assets/images/majismart-hero.jpg',
+  majigridHero: '/assets/images/majigrid-hero.jpg',
   smartWaterHero: '/assets/images/smart-water-hero.jpg',
   aiHero: '/assets/images/ai-hero.jpg',
   projectsHero: '/assets/images/projects-hero.jpg',
@@ -22,7 +22,7 @@ export const images = {
   dashboardNbiot: '/assets/images/dashboard-nbiot.jpg',
   nbiotInstallation: '/assets/images/nbiot-installation.jpg',
 
-  // MajiSmart / agriculture
-  majismartDashboard: '/assets/images/majismart-dashboard.jpg',
+  // MajiGrid / agriculture
+  majigridDashboard: '/assets/images/majigrid-dashboard.jpg',
   farmIrrigation: '/assets/images/farm-irrigation.jpg',
 };

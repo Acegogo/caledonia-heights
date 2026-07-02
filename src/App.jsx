@@ -8,7 +8,7 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Platforms = lazy(() => import('./pages/Platforms'));
-const MajiSmart = lazy(() => import('./pages/MajiSmart'));
+const MajiGrid = lazy(() => import('./pages/MajiGrid'));
 const SmartWater = lazy(() => import('./pages/SmartWater'));
 const AiSolutions = lazy(() => import('./pages/AiSolutions'));
 const Projects = lazy(() => import('./pages/Projects'));
@@ -29,7 +29,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="services" element={<Services />} />
             <Route path="platforms" element={<Platforms />} />
-            <Route path="majismart" element={<MajiSmart />} />
+            <Route path="majigrid" element={<MajiGrid />} />
             <Route path="smart-water" element={<SmartWater />} />
             <Route path="ai-solutions" element={<AiSolutions />} />
             <Route path="projects" element={<Projects />} />
