@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   IconPhone,
   IconMail,
@@ -22,10 +23,37 @@ const CONTACT = {
   hours: 'Monday – Friday, 8:00 AM – 6:00 PM EAT',
 };
 
-// TODO: Replace PLACEHOLDER_ID with your Formspree form ID
-const FORMSPREE_ACTION = 'https://formspree.io/f/PLACEHOLDER_ID';
+const WEB3FORMS_ACCESS_KEY = 'ab954266-9b2f-4a2d-9907-966cdc7463d5';
 
 const Contact = () => {
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <div className="contact-page">
       <SEO
@@ -117,7 +145,11 @@ const Contact = () => {
               We respond to all inquiries within 24 hours. For urgent matters, WhatsApp us directly.
             </p>
 
-            <form className="contact-form" action={FORMSPREE_ACTION} method="POST">
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+              <input type="hidden" name="subject" value="New enquiry from caledoniaheights.co.ke" />
+              <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
               <div className="form-group">
                 <label className="form-label" htmlFor="name">Full Name *</label>
                 <input className="form-input" type="text" id="name" name="name" required placeholder="Your full name" />
@@ -150,9 +182,20 @@ const Contact = () => {
                 <textarea className="form-textarea" id="message" name="message" required placeholder="Describe your project requirements..." />
               </div>
 
-              <Button type="submit" className="btn-primary" style={{ width: '100%' }}>
-                Send Message →
+              <Button type="submit" className="btn-primary" style={{ width: '100%' }} disabled={status === 'sending'}>
+                {status === 'sending' ? 'Sending…' : 'Send Message →'}
               </Button>
+
+              {status === 'success' && (
+                <p className="text-muted" style={{ marginTop: '1rem', color: 'var(--green)' }}>
+                  Thank you — your message has been sent. We&apos;ll get back to you within 24 hours.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-muted" style={{ marginTop: '1rem', color: 'var(--coral)' }}>
+                  Something went wrong sending your message. Please try again or WhatsApp us directly.
+                </p>
+              )}
             </form>
           </div>
         </div>
