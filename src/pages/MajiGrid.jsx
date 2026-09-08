@@ -1,15 +1,10 @@
 import {
-  IconGauge,
-  IconWifi,
-  IconBrain,
-  IconDashboard,
-  IconReportAnalytics,
   IconEye,
   IconDroplets,
   IconAdjustments,
-  IconAlertTriangle,
   IconBell,
   IconMap,
+  IconCoin,
 } from '@tabler/icons-react';
 import PageHero from '../components/PageHero';
 import Section from '../components/Section';
@@ -19,69 +14,31 @@ import SEO from '../components/SEO';
 import { images } from '../data/images';
 import './MajiGrid.css';
 
-const steps = [
-  {
-    icon: <IconGauge size={32} color="var(--cyan)" />,
-    number: '01',
-    title: 'NB-IoT Meters',
-    desc: 'Measure flow, pressure, and water movement across farms, blocks, and pumps.',
-    color: 'var(--cyan)',
-  },
-  {
-    icon: <IconWifi size={32} color="var(--green)" />,
-    number: '02',
-    title: 'Connectivity',
-    desc: 'Transmit readings reliably from remote fields via NB-IoT/4G cellular network.',
-    color: 'var(--green)',
-  },
-  {
-    icon: <IconBrain size={32} color="var(--purple)" />,
-    number: '03',
-    title: 'AI Analysis',
-    desc: 'Detect anomalies, forecast demand, score risk, and surface action priorities.',
-    color: 'var(--purple)',
-  },
-  {
-    icon: <IconDashboard size={32} color="var(--orange)" />,
-    number: '04',
-    title: 'Dashboard & Alerts',
-    desc: 'Live visibility, mobile alerts, and operational decision support in real time.',
-    color: 'var(--orange)',
-  },
-  {
-    icon: <IconReportAnalytics size={32} color="var(--gold)" />,
-    number: '05',
-    title: 'Reports',
-    desc: 'Evidence, accountability, and performance tracking for teams and partners.',
-    color: 'var(--gold)',
-  },
-];
-
 const features = [
   {
     icon: <IconEye size={28} color="var(--cyan)" />,
-    title: 'Real-Time Monitoring',
-    desc: 'Continuous visibility across pumps, blocks, and distribution lines.',
+    title: 'Real-Time Visibility',
+    desc: 'See what is happening across your farm or scheme, wherever you are.',
   },
   {
     icon: <IconDroplets size={28} color="var(--green)" />,
     title: 'Smart Scheduling',
-    desc: 'Combine field sensors with irrigation schedules for smarter watering.',
+    desc: 'Water where and when it is needed, without walking the fields.',
   },
   {
     icon: <IconAdjustments size={28} color="var(--orange)" />,
-    title: 'Remote Valve Control',
-    desc: 'Remote and scheduled control to reduce waste and labour costs.',
+    title: 'Automated Control',
+    desc: 'Turn water on or off remotely, cutting waste and labour costs.',
   },
   {
-    icon: <IconAlertTriangle size={28} color="var(--coral)" />,
-    title: 'Anomaly Detection',
-    desc: 'Surface leaks, inefficiencies, and demand spikes before they escalate.',
-  },
-  {
-    icon: <IconBell size={28} color="var(--purple)" />,
+    icon: <IconBell size={28} color="var(--coral)" />,
     title: 'Instant Alerts',
-    desc: 'Instant alerts to operators when thresholds are breached.',
+    desc: 'Get notified the moment something needs your attention.',
+  },
+  {
+    icon: <IconCoin size={28} color="var(--purple)" />,
+    title: 'M-Pesa Billing',
+    desc: 'Automated, cashless billing built into the platform.',
   },
   {
     icon: <IconMap size={28} color="var(--gold)" />,
@@ -101,9 +58,9 @@ const MajiGrid = () => {
   return (
     <div>
       <SEO
-        title="MajiGrid — AI-Powered Smart Irrigation Platform"
-        description="MajiGrid connects irrigation infrastructure to AI-enabled dashboards, alerts, and operational recommendations. Real-time monitoring for farms, schemes, and county water programs."
-        keywords="smart irrigation, AI irrigation platform, farm water management, irrigation automation, IoT agriculture"
+        title="MajiGrid — Intelligent Water Management for Agriculture"
+        description="MajiGrid gives farms, irrigation schemes, and agricultural programs real-time visibility, automated control, and M-Pesa billing for their water — from a phone or a dashboard, wherever you are."
+        keywords="smart irrigation Kenya, farm water management, irrigation billing M-Pesa, agricultural water management"
         canonical="https://caledoniaheights.co.ke/majigrid"
       />
       <PageHero
@@ -114,10 +71,10 @@ const MajiGrid = () => {
         backgroundImage={images.majigridHero}
         ctaText="Request a demo"
         ctaLink="/contact"
-        secondaryCtaText="Download brochure"
+        secondaryCtaText="Talk to our team"
         secondaryCtaLink="/contact"
         accent="green"
-        tagline="From field signals to management action — one platform."
+        tagline="From water source to farm — one system you can see and control."
       />
 
       <Section variant="dark">
@@ -126,50 +83,24 @@ const MajiGrid = () => {
             <span className="section-label section-label--green">What it is</span>
             <h2 style={{ marginBottom: '0.8rem' }}>A management system, not a gadget</h2>
             <p className="text-muted" style={{ lineHeight: 1.75, maxWidth: 720 }}>
-              MajiGrid connects physical irrigation infrastructure to AI-enabled dashboards, alerts, reports, and operational recommendations.
-              Designed for farms, irrigation schemes, counties, and national programs.
+              MajiGrid gives farms, irrigation schemes, counties, and national programs real-time visibility
+              and control over their water — from a phone or a dashboard, wherever you are.
             </p>
             <div className="pill-row" style={{ marginTop: '1.2rem' }}>
-              <span className="pill">NB-IoT</span>
-              <span className="pill">IoT sensors</span>
-              <span className="pill">Analytics</span>
-              <span className="pill">Automation</span>
+              <span className="pill">Real-time visibility</span>
+              <span className="pill">Automated control</span>
+              <span className="pill">M-Pesa billing</span>
             </div>
           </div>
           <div className="majigrid-visual">
             <img
-              src={images.majigridDashboard}
-              alt="MajiGrid irrigation management dashboard"
-              className="majigrid-visual__dashboard"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={images.farmIrrigation}
-              alt="Commercial farm with smart irrigation deployment"
+              src={images.majigridFarm}
+              alt="Solar-powered irrigation control unit in a farm field"
               className="majigrid-visual__farm"
               loading="lazy"
               decoding="async"
             />
           </div>
-        </div>
-      </Section>
-
-      <Section variant="surface">
-        <div className="section-header">
-          <span className="section-label section-label--green">Process</span>
-          <h2>How it works</h2>
-          <p>From field sensors to management action — five connected stages.</p>
-        </div>
-        <div className="grid grid-3 majigrid-steps">
-          {steps.map((step) => (
-            <div key={step.number} className="step-card" style={{ '--accent': step.color }}>
-              <div className="step-number">{step.number}</div>
-              <div className="step-icon">{step.icon}</div>
-              <h4 className="step-title">{step.title}</h4>
-              <p className="step-desc">{step.desc}</p>
-            </div>
-          ))}
         </div>
       </Section>
 
@@ -197,15 +128,15 @@ const MajiGrid = () => {
               <div className="mono" style={{ color: 'var(--green)', marginBottom: '0.5rem' }}>Flagship case study</div>
               <h3 style={{ marginBottom: '0.5rem' }}>10-acre commercial strawberry farm</h3>
               <p className="text-muted" style={{ lineHeight: 1.7 }}>
-                Solar-powered boreholes • IoT sensor network • Automated drip irrigation • Real-time dashboard • M-Pesa billing integration
+                Real-time visibility • Automated control • M-Pesa billing
               </p>
             </div>
           </div>
           <div className="grid grid-2">
             {[
               { label: 'Area', value: '10 acres' },
-              { label: 'Automation', value: 'Drip + valves' },
-              { label: 'Connectivity', value: 'NB-IoT' },
+              { label: 'Control', value: 'Automated' },
+              { label: 'Visibility', value: 'Real-time' },
               { label: 'Billing', value: 'M-Pesa' },
             ].map((s) => (
               <Card key={s.label} className="card-pad stat-card" hover={false}>
@@ -230,7 +161,7 @@ const MajiGrid = () => {
           </div>
           <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
             <Button className="btn-primary" to="/contact">Request a demo</Button>
-            <Button className="btn-green" href="https://wa.me/254708001000" target="_blank" rel="noreferrer">
+            <Button className="btn-green" href="https://wa.me/254116593201" target="_blank" rel="noreferrer">
               WhatsApp us →
             </Button>
           </div>

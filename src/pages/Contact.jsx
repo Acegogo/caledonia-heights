@@ -13,9 +13,9 @@ import { images } from '../data/images';
 import './Contact.css';
 
 const CONTACT = {
-  phone: '0708 001 000',
-  phoneHref: 'tel:+254708001000',
-  whatsapp: 'https://wa.me/254708001000',
+  phone: '0116 593 201',
+  phoneHref: 'tel:+254116593201',
+  whatsapp: 'https://wa.me/254116593201',
   email: 'info@caledoniaheights.co.ke',
   emailAlt: 'caledoniaheightsltd1@gmail.com',
   address: 'Woodvale Grove, Westlands, Nairobi, Kenya',
@@ -30,19 +30,19 @@ const Contact = () => {
     <div className="contact-page">
       <SEO
         title="Contact Us — Get in Touch with Our Team"
-        description="Contact Caledonia Heights Limited in Westlands, Nairobi. Call or WhatsApp 0708 001 000. Email info@caledoniaheights.co.ke. We respond within 24 hours."
-        keywords="contact Caledonia Heights, technology company Nairobi contact, smart water solutions"
+        description="Contact Caledonia Heights Limited in Westlands, Nairobi. Call or WhatsApp 0116 593 201. Email info@caledoniaheights.co.ke. We respond within 24 hours."
+        keywords="contact Caledonia Heights, smart water meter Kenya, prepaid water meter M-Pesa"
         canonical="https://caledoniaheights.co.ke/contact"
       />
       <PageHero
         title="Partner With Us"
-        subtitle="Ready to discuss smart water, MajiGrid, AI automation, or enterprise systems? We respond within 24 hours."
+        subtitle="Ready to discuss smart water metering or a MajiGrid deployment? We respond within 24 hours."
         badge="Contact"
         bgVariant="surface"
         backgroundImage={images.contactHero}
         ctaText="WhatsApp us"
         ctaLink={CONTACT.whatsapp}
-        secondaryCtaText="Call 0708 001 000"
+        secondaryCtaText="Call 0116 593 201"
         secondaryCtaLink={CONTACT.phoneHref}
       />
 
@@ -137,12 +137,10 @@ const Contact = () => {
                 <label className="form-label" htmlFor="service">Service of Interest</label>
                 <select className="form-select" id="service" name="service" defaultValue="">
                   <option value="" disabled>Select a service</option>
-                  <option>Smart Water Metering</option>
-                  <option>MajiGrid Irrigation</option>
-                  <option>AI Business Agents</option>
-                  <option>Custom Software Development</option>
-                  <option>ERP System</option>
-                  <option>Cloud Hosting</option>
+                  <option>STS Prepaid Water Meters</option>
+                  <option>NB-IoT Smart Meters</option>
+                  <option>Multi-Jet / Woltmann Meters</option>
+                  <option>MajiGrid</option>
                   <option>Other</option>
                 </select>
               </div>

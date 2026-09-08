@@ -6,11 +6,8 @@ import './App.css';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
-const Services = lazy(() => import('./pages/Services'));
-const Platforms = lazy(() => import('./pages/Platforms'));
+const Meters = lazy(() => import('./pages/Meters'));
 const MajiGrid = lazy(() => import('./pages/MajiGrid'));
-const SmartWater = lazy(() => import('./pages/SmartWater'));
-const AiSolutions = lazy(() => import('./pages/AiSolutions'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Contact = lazy(() => import('./pages/Contact'));
 
@@ -27,11 +24,8 @@ function App() {
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
-            <Route path="platforms" element={<Platforms />} />
+            <Route path="meters" element={<Meters />} />
             <Route path="majigrid" element={<MajiGrid />} />
-            <Route path="smart-water" element={<SmartWater />} />
-            <Route path="ai-solutions" element={<AiSolutions />} />
             <Route path="projects" element={<Projects />} />
             <Route path="contact" element={<Contact />} />
           </Route>

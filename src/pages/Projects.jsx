@@ -10,6 +10,7 @@ import './Projects.css';
 
 const Projects = () => {
   const [active, setActive] = useState('All');
+  const [brokenImages, setBrokenImages] = useState({});
 
   const filtered = useMemo(() => {
     if (active === 'All') return projects;
@@ -19,14 +20,14 @@ const Projects = () => {
   return (
     <div className="projectsNew">
       <SEO
-        title="Projects & Portfolio — Platforms, AI & Web Delivery"
-        description="A portfolio of delivered platforms, AI systems, and web projects — smart irrigation, water metering, AI agents, real estate, and corporate websites."
-        keywords="technology projects, IoT projects, AI projects, web development portfolio, smart water platforms"
+        title="Installations & Projects — Smart Water Metering Kenya"
+        description="A portfolio of smart water metering installations — STS prepaid deployments and NB-IoT smart metering for residential, commercial, and industrial properties across Kenya."
+        keywords="smart water meter Kenya, prepaid water meter M-Pesa, NB-IoT water meter, water metering Kenya installations"
         canonical="https://caledoniaheights.co.ke/projects"
       />
       <PageHero
-        title="Projects & Portfolio"
-        subtitle="A selection of platforms, AI systems, and web delivery work worldwide."
+        title="Installations & Projects"
+        subtitle="A selection of smart water metering installations, surveyed and commissioned by our team."
         badge="Portfolio"
         bgVariant="surface"
         backgroundImage={images.projectsHero}
@@ -62,8 +63,15 @@ const Projects = () => {
           {filtered.map((p) => (
             <Card key={p.id} className="card-hover project-card">
               <div className="projectsNew__cardTop">
-                {p.image ? (
-                  <img src={p.image} alt={p.name} className="projectsNew__img" loading="lazy" decoding="async" />
+                {p.image && !brokenImages[p.id] ? (
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="projectsNew__img"
+                    loading="lazy"
+                    decoding="async"
+                    onError={() => setBrokenImages((prev) => ({ ...prev, [p.id]: true }))}
+                  />
                 ) : (
                   <div className="projectsNew__imgPlaceholder" aria-hidden="true" />
                 )}
@@ -94,6 +102,10 @@ const Projects = () => {
             </Card>
           ))}
         </div>
+
+        <p className="text-center text-muted" style={{ marginTop: '2.5rem', lineHeight: 1.7 }}>
+          Every installation is surveyed, commissioned, and supported by our team.
+        </p>
       </Section>
     </div>
   );

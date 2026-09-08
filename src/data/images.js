@@ -3,26 +3,30 @@ export const images = {
   logo: '/assets/images/logo.png',
 
   // Page hero backgrounds
-  heroBg: '/assets/images/hero-bg.jpg',
-  aboutHero: '/assets/images/about-hero.jpg',
-  servicesHero: '/assets/images/services-hero.jpg',
-  platformsHero: '/assets/images/platforms-hero.jpg',
-  majigridHero: '/assets/images/majismart-hero.jpg',
-  smartWaterHero: '/assets/images/smart-water-hero.jpg',
-  aiHero: '/assets/images/ai-hero.jpg',
-  projectsHero: '/assets/images/projects-hero.jpg',
+  heroBg: '/assets/images/platform-hero.webp',
+  aboutHero: '/assets/images/about-hero.webp',
+  meterHero: '/assets/images/meter-range.webp',
+  majigridHero: '/assets/images/majigrid-hero.webp',
+  projectsHero: '/assets/images/projects-hero.webp',
   contactHero: '/assets/images/contact-hero.jpg',
+  smartWaterHero: '/assets/images/smart-water-hero.webp',
 
-  // Smart water & metering
-  smartMeters: '/assets/images/smart-meters.jpg',
-  stsMeter: '/assets/images/sts-meter.jpg',
-  dashboardSts: '/assets/images/dashboard-sts.png',
-  dashboardLandlord: '/assets/images/dashboard-landlord.jpg',
-  nbiotMeter: '/assets/images/nbiot-meter.jpg',
-  dashboardNbiot: '/assets/images/dashboard-nbiot.jpg',
-  nbiotInstallation: '/assets/images/nbiot-installation.jpg',
+  // Meter product lines — kept distinct per page to avoid repeating the same shot everywhere
+  meterSts: '/assets/images/meter-sts.webp',
+  meterStsAlt: '/assets/images/sts-meter.webp',
+  meterNbiot: '/assets/images/meter-nbiot.webp',
+  meterNbiotAlt: '/assets/images/nbiot-meter.webp',
+  meterMultijet: '/assets/images/meter-multijet.webp',
+  meterWoltmann: '/assets/images/meter-woltmann.webp',
+  meterRange: '/assets/images/meter-range.webp',
 
   // MajiGrid / agriculture
-  majigridDashboard: '/assets/images/majismart-dashboard.jpg',
   farmIrrigation: '/assets/images/farm-irrigation.jpg',
+  majigridFarm: '/assets/images/majigrid-farm.webp',
+
+  // Installation stories
+  installNakuru: '/assets/images/project-nakuru.webp',
+  installStsBalcony: '/assets/images/project-nairobi.webp',
+  installStsRooftop: '/assets/images/project-molo.webp',
+  installValveControl: '/assets/images/project-ruiru.webp',
 };

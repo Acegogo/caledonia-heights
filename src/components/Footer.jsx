@@ -13,15 +13,15 @@ const Footer = () => {
             <img src="/assets/images/logo.png" alt="Caledonia Heights" className="footer-logo" loading="lazy" decoding="async" />
           </div>
           <p className="footerNew__tagline">
-            Powering the Future of Digital Infrastructure
+            Smart Water Management Made Simple.
           </p>
           <p className="footerNew__desc footer-desc text-muted">
-            From smart farms and water networks to growing businesses and urban properties —
-            we build, host, and maintain the technology that moves businesses forward.
+            We supply, install, and support smart water metering systems for landlords, property developers,
+            institutions, and utilities — from prepaid vending to real-time monitoring.
           </p>
 
           <div className="footerNew__social">
-            <a className="footerNew__socialBtn" href="https://wa.me/254708001000" target="_blank" rel="noreferrer">
+            <a className="footerNew__socialBtn" href="https://wa.me/254116593201" target="_blank" rel="noreferrer">
               <IconBrandWhatsapp size={18} /> WhatsApp
             </a>
             <a className="footerNew__socialBtn" href="mailto:info@caledoniaheights.co.ke">
@@ -42,24 +42,21 @@ const Footer = () => {
           </div>
 
           <div className="footerNew__col">
-            <div className="footerNew__title footer-heading">Services</div>
-            <Link to="/smart-water" className="footer-link">Smart Water</Link>
-            <Link to="/majigrid" className="footer-link">MajiGrid</Link>
-            <Link to="/ai-solutions" className="footer-link">AI Solutions</Link>
-            <Link to="/services" className="footer-link">All Services</Link>
+            <div className="footerNew__title footer-heading">Meters</div>
+            <Link to="/meters" className="footer-link">STS Prepaid</Link>
+            <Link to="/meters" className="footer-link">NB-IoT Smart Meters</Link>
+            <Link to="/meters" className="footer-link">Multi-Jet &amp; Woltmann</Link>
           </div>
 
           <div className="footerNew__col">
-            <div className="footerNew__title footer-heading">Platforms</div>
-            <Link to="/majigrid" className="footer-link">MajiGrid</Link>
-            <Link to="/smart-water" className="footer-link">NB-IoT Metering</Link>
-            <Link to="/smart-water" className="footer-link">STS Prepaid</Link>
-            <Link to="/platforms" className="footer-link">Platforms Overview</Link>
+            <div className="footerNew__title footer-heading">MajiGrid</div>
+            <Link to="/majigrid" className="footer-link">Smart Irrigation</Link>
+            <Link to="/majigrid" className="footer-link">Farms &amp; Schemes</Link>
           </div>
 
           <div className="footerNew__col">
             <div className="footerNew__title footer-heading">Contact</div>
-            <a href="tel:+254708001000" className="footer-link">0708 001 000</a>
+            <a href="tel:+254116593201" className="footer-link">0116 593 201</a>
             <a href="mailto:info@caledoniaheights.co.ke" className="footer-link">info@caledoniaheights.co.ke</a>
             <span className="footer-link footer-link--text footerNew__address text-muted">
               Woodvale Grove, Westlands, Nairobi, Kenya

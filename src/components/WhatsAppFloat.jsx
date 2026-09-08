@@ -5,7 +5,7 @@ const WhatsAppFloat = () => {
   return (
     <a
       className="whatsapp-float"
-      href="https://wa.me/254708001000"
+      href="https://wa.me/254116593201"
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with Caledonia Heights on WhatsApp"

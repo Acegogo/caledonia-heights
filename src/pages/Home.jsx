@@ -2,11 +2,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   IconDroplet,
+  IconWifi,
   IconPlant2,
-  IconCode,
-  IconRobot,
-  IconCloud,
-  IconBuildingCommunity,
 } from '@tabler/icons-react';
 import Button from '../components/Button';
 import Section from '../components/Section';
@@ -19,38 +16,35 @@ import { staggerContainer, fadeUpVariant } from '../utils/animations';
 import './Home.css';
 
 const serviceIcons = {
-  'smart-water': IconDroplet,
+  sts: IconDroplet,
+  nbiot: IconWifi,
   majigrid: IconPlant2,
-  'ai-solutions': IconRobot,
-  'custom-software': IconCode,
-  erp: IconBuildingCommunity,
-  hosting: IconCloud,
 };
 
 const platforms = [
   {
+    name: 'Caldora STS Prepaid Water',
+    desc: 'Water paid for before it flows — M-Pesa tokens with automatic valve shut-off.',
+    stat: 'DN15–DN25',
+    accent: 'cyan',
+    link: '/meters',
+    image: images.meterStsAlt,
+  },
+  {
+    name: 'Caldora NB-IoT Smart Meters',
+    desc: 'Postpaid ultrasonic metering that reports live over the cellular network.',
+    stat: 'DN15–DN50',
+    accent: 'blue',
+    link: '/meters',
+    image: images.meterNbiotAlt,
+  },
+  {
     name: 'MajiGrid',
-    desc: 'AI-powered irrigation intelligence for farms and schemes.',
+    desc: 'Intelligent water management for farms and irrigation schemes.',
     stat: '10-acre flagship',
     accent: 'green',
     link: '/majigrid',
-    image: images.majigridDashboard,
-  },
-  {
-    name: 'Caldora NB-IoT Smart Metering',
-    desc: 'Real-time smart metering with alarms and remote valve control.',
-    stat: 'Live dashboards',
-    accent: 'cyan',
-    link: '/smart-water',
-    image: images.dashboardNbiot,
-  },
-  {
-    name: 'Caldora STS Prepaid Water',
-    desc: 'M-Pesa prepaid vending with STS tokens and landlord portals.',
-    stat: 'M-Pesa native',
-    accent: 'blue',
-    link: '/smart-water',
-    image: images.dashboardSts,
+    image: images.majigridHero,
   },
 ];
 
@@ -58,9 +52,9 @@ const Home = () => {
   return (
     <div className="home">
       <SEO
-        title="Your Long-Term Technology Partner"
-        description="Caledonia Heights builds smart water metering systems, AI business agents, MajiGrid irrigation platforms, custom software, and ERP systems for enterprises, utilities, and institutions."
-        keywords="smart water metering, NB-IoT water meter, prepaid water M-Pesa, AI chatbot, custom software, ERP system, smart irrigation, IoT platforms"
+        title="Smart Water Management Made Simple"
+        description="Caledonia Heights supplies, installs, and supports smart water metering systems — STS prepaid, NB-IoT smart meters, and MajiGrid irrigation intelligence — for landlords, developers, institutions, and utilities."
+        keywords="smart water meter Kenya, prepaid water meter M-Pesa, NB-IoT water meter, STS prepaid meter, water metering Kenya, smart water management"
         canonical="https://caledoniaheights.co.ke"
       />
       <section className="home-hero" style={{ '--hero-bg': `url(${images.heroBg})` }}>
@@ -77,13 +71,15 @@ const Home = () => {
               <span className="pill">8+ Years</span>
             </motion.div>
             <motion.h1 variants={fadeUpVariant} className="home-hero__title">
-              Your Long-Term Technology Partner
+              Smart Water Management Made Simple.
             </motion.h1>
             <motion.p variants={fadeUpVariant} className="home-hero__subtitle text-muted">
-              Building the critical digital infrastructure that powers enterprises, utilities, and government institutions.
+              We supply, install, and support smart water metering systems for landlords, property developers,
+              institutions, and utilities — turning a meter into a point where water becomes information you
+              can act on.
             </motion.p>
             <motion.div variants={fadeUpVariant} className="home-hero__actions">
-              <Button className="btn-primary" to="/services">Explore Our Solutions →</Button>
+              <Button className="btn-primary" to="/meters">Explore Our Meters →</Button>
               <Button className="btn-secondary" to="/projects">View Our Work</Button>
             </motion.div>
           </motion.div>
@@ -94,9 +90,9 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <img src={images.dashboardNbiot} alt="NB-IoT metering dashboard" className="mockup mockup--main" decoding="async" />
-            <img src={images.dashboardSts} alt="STS prepaid water dashboard" className="mockup mockup--side" decoding="async" />
-            <img src={images.majigridDashboard} alt="MajiGrid irrigation dashboard" className="mockup mockup--back" decoding="async" />
+            <img src={images.meterNbiotAlt} alt="Caldora NB-IoT smart water meter" className="mockup mockup--main" decoding="async" />
+            <img src={images.meterStsAlt} alt="Caldora STS prepaid water meter" className="mockup mockup--side" decoding="async" />
+            <img src={images.majigridFarm} alt="MajiGrid smart irrigation" className="mockup mockup--back" decoding="async" />
           </motion.div>
         </div>
         <div className="scroll-indicator">
@@ -128,13 +124,13 @@ const Home = () => {
 
       <Section variant="surface" id="services" className="section--glow-right">
         <div className="section-header">
-          <span className="section-label">Services</span>
-          <h2>End-to-End Technology Services</h2>
-          <p>From smart water infrastructure to AI automation — built, hosted, and maintained by one partner.</p>
+          <span className="section-label">Meters</span>
+          <h2>End-to-End Water Metering Services</h2>
+          <p>From prepaid vending to real-time monitoring — hardware, connectivity, and support from one partner.</p>
         </div>
         <div className="grid grid-3">
           {services.map((s) => {
-            const Icon = serviceIcons[s.id] || IconCode;
+            const Icon = serviceIcons[s.id] || IconDroplet;
             return (
               <Link
                 key={s.id}
@@ -157,8 +153,8 @@ const Home = () => {
 
       <Section variant="dark" className="section--glow-left">
         <div className="section-header section-header--left home-sectionHead">
-          <h2>Flagship Platforms</h2>
-          <p className="text-muted">Production systems managing irrigation, metering, and prepaid revenue in the field.</p>
+          <h2>Our Product Lines</h2>
+          <p className="text-muted">Meters and systems installed and supported in the field, from single units to whole estates.</p>
         </div>
         <div className="grid grid-3">
           {platforms.map((p) => (
@@ -182,12 +178,12 @@ const Home = () => {
             <div className="mono" style={{ color: 'var(--green)', marginBottom: '0.6rem' }}>Flagship deployment</div>
             <h2>10-Acre Smart Irrigation Deployment</h2>
             <p className="text-muted" style={{ lineHeight: 1.75, marginTop: '0.75rem' }}>
-              Solar-powered boreholes • NB-IoT sensors • Automated drip irrigation • Real-time dashboard • M-Pesa integrated billing
+              Real-time visibility • Automated control • M-Pesa integrated billing
             </p>
             <div className="pill-row" style={{ marginTop: '1rem' }}>
               <span className="pill">10 acres</span>
-              <span className="pill">IoT sensors</span>
-              <span className="pill">Automated scheduling</span>
+              <span className="pill">Real-time visibility</span>
+              <span className="pill">Automated control</span>
               <span className="pill">M-Pesa</span>
             </div>
             <Button className="btn-primary" to="/majigrid" style={{ marginTop: '1.25rem' }}>
@@ -197,39 +193,19 @@ const Home = () => {
         </div>
       </section>
 
-      <Section variant="surface" className="section--glow-bottom">
-        <div className="grid grid-2" style={{ alignItems: 'center' }}>
-          <div>
-            <h2>AI That Works For Your Business</h2>
-            <p className="text-muted" style={{ lineHeight: 1.75, marginTop: '0.75rem' }}>
-              Custom chatbots, AI sales agents, and workflow automation — built around your operations and maintained by our team.
-            </p>
-            <Button className="btn-primary" to="/ai-solutions" style={{ marginTop: '1.2rem' }}>
-              Explore AI Solutions →
-            </Button>
-          </div>
-          <Card className="card-pad" hover={false}>
-            <ul className="text-muted" style={{ display: 'grid', gap: '0.7rem', lineHeight: 1.7 }}>
-              <li>● AI Business Chatbot — 24/7 customer support</li>
-              <li>● AI Sales Agent — lead qualification & follow-up</li>
-              <li>● Workflow Automation — ERP/CRM/WhatsApp integrations</li>
-            </ul>
-          </Card>
-        </div>
-      </Section>
-
       <Section variant="dark">
         <div className="home-sectionHead">
           <h2>Smart Water in the Field</h2>
         </div>
         <div className="grid grid-2" style={{ alignItems: 'center' }}>
-          <img src={images.smartMeters} alt="Smart water meters product range" className="home-inlineImg" loading="lazy" decoding="async" />
+          <img src={images.smartWaterHero} alt="Row of smart water meters installed on site" className="home-inlineImg" loading="lazy" decoding="async" />
           <div>
             <p className="text-muted" style={{ lineHeight: 1.75 }}>
-              From prepaid STS vending to NB-IoT real-time monitoring — hardware, connectivity, dashboards, and long-term support.
+              From prepaid STS vending to NB-IoT real-time monitoring — hardware, connectivity, installation,
+              and long-term support.
             </p>
             <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', marginTop: '1.2rem' }}>
-              <Button className="btn-primary" to="/smart-water">Smart water solutions →</Button>
+              <Button className="btn-primary" to="/meters">Explore the meter range →</Button>
               <Button className="btn-secondary" to="/projects">View projects</Button>
             </div>
           </div>
@@ -238,14 +214,14 @@ const Home = () => {
 
       <Section variant="surface2" className="home-cta">
         <div className="text-center">
-          <h2>Ready to build something extraordinary?</h2>
+          <h2>Ready to install smart water metering?</h2>
           <p className="text-muted" style={{ maxWidth: 640, margin: '0.75rem auto 0', lineHeight: 1.75 }}>
-            Talk to us about smart water, MajiGrid, AI automation, or enterprise systems — we respond within 24 hours.
+            Talk to us about STS prepaid, NB-IoT smart metering, or MajiGrid — we respond within 24 hours.
           </p>
           <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.4rem' }}>
             <Button className="btn-primary" to="/contact">Get in Touch</Button>
-            <Button className="btn-green" href="https://wa.me/254708001000" target="_blank" rel="noreferrer">
-              WhatsApp 0708 001 000
+            <Button className="btn-green" href="https://wa.me/254116593201" target="_blank" rel="noreferrer">
+              WhatsApp 0116 593 201
             </Button>
           </div>
         </div>

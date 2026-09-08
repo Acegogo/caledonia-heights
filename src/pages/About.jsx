@@ -6,33 +6,33 @@ import { images } from '../data/images';
 import './About.css';
 
 const timeline = [
-  { year: '2018', title: 'Founded in Nairobi', desc: 'Incorporated Nov 9, 2018. First web development projects.', color: 'var(--cyan)' },
-  { year: '2020', title: 'STS Prepaid Launch', desc: 'Launched the Caldora STS Prepaid Water platform. First utility clients onboarded.', color: 'var(--green)' },
+  { year: '2018', title: 'Founded in Nairobi', desc: 'Incorporated Nov 9, 2018.', color: 'var(--cyan)' },
+  { year: '2020', title: 'STS Prepaid Launch', desc: 'Launched the Caldora STS Prepaid Water platform. First landlord clients onboarded.', color: 'var(--green)' },
   { year: '2021', title: 'NB-IoT Smart Metering', desc: 'Deployed Caldora NB-IoT real-time water metering infrastructure across properties.', color: 'var(--purple)' },
-  { year: '2022', title: '10-Acre Irrigation', desc: "Flagship smart irrigation deployment on a strawberry farm — one of Africa's most advanced IoT farming deployments.", color: 'var(--orange)' },
-  { year: '2023', title: 'AI & Automation', desc: 'Expanded into AI chatbots, sales agents, and workflow automation for businesses.', color: 'var(--gold)' },
-  { year: '2024', title: 'MajiGrid Platform', desc: 'Launched MajiGrid — AI-powered water intelligence for farms, counties, and national programs.', color: 'var(--green)' },
-  { year: '2026', title: 'Growing & Scaling', desc: '50+ clients served. Three product lines. Long-term managed services worldwide.', color: 'var(--cyan)' },
+  { year: '2022', title: '10-Acre Irrigation', desc: 'Flagship smart irrigation deployment on a commercial strawberry farm.', color: 'var(--orange)' },
+  { year: '2023', title: 'Expanding Installations', desc: 'Grew our installation and support team to serve landlords, institutions, and utilities nationwide.', color: 'var(--gold)' },
+  { year: '2024', title: 'MajiGrid Platform', desc: 'Launched MajiGrid — intelligent water management for farms, counties, and national programs.', color: 'var(--green)' },
+  { year: '2026', title: 'Growing & Scaling', desc: '50+ clients served. Prepaid, real-time, and bulk metering. Long-term managed installations.', color: 'var(--cyan)' },
 ];
 
 const values = [
-  { title: 'Innovation', desc: 'Leveraging IoT, AI, and cloud to solve real infrastructure problems at scale.', accent: 'cyan', className: 'card--cyan' },
-  { title: 'Reliability', desc: 'We build systems that stay up — ensuring business continuity for mission-critical operations.', accent: 'green', className: 'card--green' },
-  { title: 'Partnership', desc: 'We are not just vendors; we are long-term technology partners from build to maintenance.', accent: 'orange', className: 'card--orange' },
+  { title: 'Innovation', desc: 'Leveraging IoT and cellular connectivity to solve real water infrastructure problems at scale.', accent: 'cyan', className: 'card--cyan' },
+  { title: 'Reliability', desc: 'We build systems that stay up — ensuring accurate billing and revenue protection for our clients.', accent: 'green', className: 'card--green' },
+  { title: 'Partnership', desc: 'We are not just suppliers; we survey, install, and support every meter for the long term.', accent: 'orange', className: 'card--orange' },
 ];
 
 const About = () => {
   return (
     <div className="about-page">
       <SEO
-        title="About Us — 8 Years Building Digital Infrastructure"
-        description="Founded in 2018 in Nairobi, Caledonia Heights has been building critical digital infrastructure — smart water platforms, AI systems, and enterprise software — for businesses and utilities."
-        keywords="Caledonia Heights, technology company, software development, IoT company, smart water platforms"
+        title="About Us — Smart Water Metering Since 2018"
+        description="Founded in 2018 in Nairobi, Caledonia Heights supplies, installs, and supports smart water metering systems — STS prepaid, NB-IoT, and MajiGrid — for landlords, developers, institutions, and utilities."
+        keywords="smart water meter Kenya, water metering company Nairobi, prepaid water meter M-Pesa, NB-IoT water meter"
         canonical="https://caledoniaheights.co.ke/about"
       />
       <PageHero
-        title="8 Years of Building Digital Backbone"
-        subtitle="From a web agency to a full-spectrum technology powerhouse — smart water, irrigation, AI, and enterprise systems."
+        title="8 Years of Smart Water Infrastructure"
+        subtitle="From our first prepaid water platform to national-scale metering and irrigation deployments."
         badge="About Us"
         bgVariant="surface"
         backgroundImage={images.aboutHero}
@@ -46,10 +46,12 @@ const About = () => {
         <div className="grid grid-2" style={{ alignItems: 'center' }}>
           <div>
             <span className="section-label">Our Mission</span>
-            <h2 style={{ marginBottom: '1rem' }}>Build, host, and maintain critical systems</h2>
+            <h2 style={{ marginBottom: '1rem' }}>Water becomes information you can act on</h2>
             <p className="text-muted" style={{ lineHeight: 1.75 }}>
-              To build, host, and maintain the critical systems that power our clients&apos; success — from prepaid water platforms
-              to smart irrigation and AI business automation.
+              Caledonia Heights supplies, installs, and supports smart water metering systems for landlords,
+              property developers, institutions, and utilities. We turn a water meter from a dial on a wall
+              into the point where water becomes information you can act on — billed, controlled, and visible
+              from anywhere.
             </p>
           </div>
           <div className="grid grid-3">
@@ -67,7 +69,7 @@ const About = () => {
         <div className="section-header">
           <span className="section-label section-label--purple">Our Story</span>
           <h2>Timeline of delivery</h2>
-          <p>Seven years of building platforms that matter — from first websites to national-scale IoT deployments.</p>
+          <p>Seven years of building water infrastructure that matters — from our first prepaid meters to national-scale deployments.</p>
         </div>
         <div className="timeline">
           {timeline.map((item) => (
@@ -91,9 +93,8 @@ const About = () => {
             <div className="section-label">Credentials</div>
             <h3 style={{ marginBottom: '0.75rem' }}>Registered &amp; Ready</h3>
             <p className="text-muted" style={{ lineHeight: 1.7 }}>
-              Caledonia Heights Limited is a registered company,
-              fully compliant and positioned for enterprise, government,
-              and institutional engagements.
+              A fully registered and compliant company, Caledonia Heights Limited is set up to serve
+              enterprises, government bodies, and institutions alike.
             </p>
             <div className="cred-items">
               <div className="cred-item">
@@ -113,7 +114,7 @@ const About = () => {
           <div className="card card-pad card-hover">
             <h3 style={{ marginBottom: '0.75rem' }}>A small, elite team</h3>
             <p className="text-muted" style={{ lineHeight: 1.75 }}>
-              Enterprise-grade delivery capability without the overhead of a large agency. We build, deploy, host, and maintain —
+              Enterprise-grade delivery capability without the overhead of a large agency. We survey, install, deploy, and maintain —
               one partner from day one.
             </p>
             <div className="about-hiring card card-pad" style={{ marginTop: '1.25rem' }}>
@@ -131,11 +132,11 @@ const About = () => {
         <div className="text-center">
           <h2>Ready to partner with us?</h2>
           <p className="text-muted" style={{ maxWidth: 560, margin: '0.75rem auto 0', lineHeight: 1.75 }}>
-            Whether you need smart water, MajiGrid, AI automation, or a custom enterprise platform — let&apos;s talk.
+            Whether you need STS prepaid meters, NB-IoT smart metering, or a MajiGrid deployment — let&apos;s talk.
           </p>
           <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.4rem' }}>
             <Button className="btn-primary" to="/contact">Contact our team →</Button>
-            <Button className="btn-green" href="https://wa.me/254708001000" target="_blank" rel="noreferrer">
+            <Button className="btn-green" href="https://wa.me/254116593201" target="_blank" rel="noreferrer">
               WhatsApp us
             </Button>
           </div>

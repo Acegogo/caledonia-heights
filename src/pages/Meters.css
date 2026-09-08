@@ -75,6 +75,15 @@
   margin-top: 0.1rem;
 }
 
+.meters-secondary-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 900px) {
   .smartWater-gallery {
     grid-template-columns: 1fr;
