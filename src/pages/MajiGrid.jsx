@@ -38,7 +38,7 @@ const features = [
   {
     icon: <IconCoin size={28} color="var(--purple)" />,
     title: 'M-Pesa Billing',
-    desc: 'Automated, cashless billing built into the platform.',
+    desc: 'Cashless billing built in, with PayGo and flexible payment plans that work for smallholders.',
   },
   {
     icon: <IconMap size={28} color="var(--gold)" />,
@@ -48,7 +48,8 @@ const features = [
 ];
 
 const audiences = [
-  'Large-scale commercial farms',
+  'Commercial farms of every size',
+  'Smallholder farmers on PayGo and flexible payment plans',
   'County irrigation schemes',
   'National water management programs',
   'Agricultural cooperatives',
